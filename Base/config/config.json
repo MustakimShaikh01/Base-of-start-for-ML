@@ -1,0 +1,7 @@
+{
+    "train_file": "C:/Users/user/Desktop/ML - Code/Base/data/target/titanic/train/train.csv",
+    "test_file": "C:/Users/user/Desktop/ML - Code/Base/data/target/titanic/test/test.csv",
+    "target_column": "Survived",
+    "drop_columns": ["PassengerId", "Name", "Ticket", "Cabin"],
+    "categorical_columns": ["Sex", "Embarked"]
+}
