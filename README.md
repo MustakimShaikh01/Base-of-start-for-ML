@@ -1,124 +1,25 @@
-# Base-of-start-for-ML
-# Exploratory Data Analysis (EDA) Pipeline
+# EDA Report
 
-![EDA Pipeline](images/eda_pipeline.png)  <!-- Add an image illustrating the EDA process -->
+## Summary
+- **Shape**: (891, 12)
+- **Data Types**:
+```
+{'PassengerId': dtype('int64'), 'Survived': dtype('int64'), 'Pclass': dtype('int64'), 'Name': dtype('O'), 'Sex': dtype('O'), 'Age': dtype('float64'), 'SibSp': dtype('int64'), 'Parch': dtype('int64'), 'Ticket': dtype('O'), 'Fare': dtype('float64'), 'Cabin': dtype('O'), 'Embarked': dtype('O')}
+```
+- **Missing Values**:
+```
+{'PassengerId': 0, 'Survived': 0, 'Pclass': 0, 'Name': 0, 'Sex': 0, 'Age': 177, 'SibSp': 0, 'Parch': 0, 'Ticket': 0, 'Fare': 0, 'Cabin': 687, 'Embarked': 2}
+```
+- **Basic Statistics**:
+```
+{'PassengerId': {'count': 891.0, 'unique': nan, 'top': nan, 'freq': nan, 'mean': 446.0, 'std': 257.3538420152301, 'min': 1.0, '25%': 223.5, '50%': 446.0, '75%': 668.5, 'max': 891.0}, 'Survived': {'count': 891.0, 'unique': nan, 'top': nan, 'freq': nan, 'mean': 0.3838383838383838, 'std': 0.4865924542648575, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 1.0, 'max': 1.0}, 'Pclass': {'count': 891.0, 'unique': nan, 'top': nan, 'freq': nan, 'mean': 2.308641975308642, 'std': 0.836071240977049, 'min': 1.0, '25%': 2.0, '50%': 3.0, '75%': 3.0, 'max': 3.0}, 'Name': {'count': 891, 'unique': 891, 'top': 'Dooley, Mr. Patrick', 'freq': 1, 'mean': nan, 'std': nan, 'min': nan, '25%': nan, '50%': nan, '75%': nan, 'max': nan}, 'Sex': {'count': 891, 'unique': 2, 'top': 'male', 'freq': 577, 'mean': nan, 'std': nan, 'min': nan, '25%': nan, '50%': nan, '75%': nan, 'max': nan}, 'Age': {'count': 714.0, 'unique': nan, 'top': nan, 'freq': nan, 'mean': 29.69911764705882, 'std': 14.526497332334042, 'min': 0.42, '25%': 20.125, '50%': 28.0, '75%': 38.0, 'max': 80.0}, 'SibSp': {'count': 891.0, 'unique': nan, 'top': nan, 'freq': nan, 'mean': 0.5230078563411896, 'std': 1.1027434322934317, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 1.0, 'max': 8.0}, 'Parch': {'count': 891.0, 'unique': nan, 'top': nan, 'freq': nan, 'mean': 0.38159371492704824, 'std': 0.8060572211299483, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 6.0}, 'Ticket': {'count': 891, 'unique': 681, 'top': '347082', 'freq': 7, 'mean': nan, 'std': nan, 'min': nan, '25%': nan, '50%': nan, '75%': nan, 'max': nan}, 'Fare': {'count': 891.0, 'unique': nan, 'top': nan, 'freq': nan, 'mean': 32.204207968574636, 'std': 49.6934285971809, 'min': 0.0, '25%': 7.9104, '50%': 14.4542, '75%': 31.0, 'max': 512.3292}, 'Cabin': {'count': 204, 'unique': 147, 'top': 'G6', 'freq': 4, 'mean': nan, 'std': nan, 'min': nan, '25%': nan, '50%': nan, '75%': nan, 'max': nan}, 'Embarked': {'count': 889, 'unique': 3, 'top': 'S', 'freq': 644, 'mean': nan, 'std': nan, 'min': nan, '25%': nan, '50%': nan, '75%': nan, 'max': nan}}
+```
 
-## Overview
+## Missing Values
+The following columns have missing values:
 
-The **Exploratory Data Analysis (EDA) Pipeline** is a comprehensive Python-based framework designed to facilitate the analysis of datasets. This pipeline automates the process of generating insightful summaries, visualizations, and reports that aid in understanding the underlying patterns and anomalies in the data.
+## Distributions
+## Correlation Matrix
+![Correlation Matrix](correlation_matrix.png)
 
-## Key Features
-
-- **Summary Statistics**: Automatically generates statistical summaries of the dataset.
-- **Missing Values Analysis**: Identifies and visualizes missing data points.
-- **Distribution Visualization**: Plots the distributions of numerical features for better insights.
-- **Correlation Analysis**: Calculates and visualizes the correlation matrix of numerical variables.
-- **Categorical Features Analysis**: Visualizes the distribution of categorical variables.
-
-## Directory Structure
-
-The project directory is organized as follows:
-
-project_folder/   
-            ├── eda/ 
-            │ ├── eda_main.py # Main script to run EDA 
-            │ ├── data_summary.py # Module to generate summary statistics 
-            │ ├── missing_values_analysis.py # Module to analyze missing values 
-            │ ├── distribution_visualization.py # Module for distribution plots 
-            │ ├── correlation_analysis.py # Module for correlation matrix 
-            │ └── categorical_analysis.py # Module for categorical feature analysis 
-            ├── data/ 
-            │ ├── train/ # Training data folder 
-            │ │ └── train.csv # Training dataset in CSV format 
-            │ └── eda_results/ # Folder to save EDA results and report 
-            │ ├── report.md # Markdown report generated after analysis 
-            │ └── <image_files> # Various generated images (e.g., distribution plots) 
-            ├── images/ │ └── eda_pipeline.png # Flowchart or image illustrating the EDA process └── requirements.txt # Required Python packages   
-
-
-## Installation
-
-To get started with the EDA Pipeline, follow these steps:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone <repository_url>
-   cd <repository_folder>
-
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-
-pip install -r requirements.txt
-
-Usage
-To run the EDA pipeline, execute the following command in your terminal:
-python python eda/eda_main.py "data/target/titanic"
-
-Example
-Assuming your project folder is structured correctly and contains the train.csv file, simply run:
-python eda/eda_main.py "C:/Users/user/Desktop/ML - Code/Base/data"
-
-
-Output
-Upon successful execution, the following files will be generated in the data/eda_results directory:
-
-report.md: A Markdown report summarizing the EDA findings.
-Various PNG files corresponding to generated visualizations (e.g., distribution plots, correlation matrices).
-<!-- Add a screenshot of the report or example visualizations -->
-
-Code Explanation
-1. Main Script: eda_main.py
-The main script controls the EDA process and performs the following tasks:
-
-Imports Necessary Modules: This includes functions from various analysis modules.
-Sets Up Logging: Configures logging to provide insights into the EDA process.
-Generates Report: Collects results from various analyses and writes them into a Markdown report.
-Key Functions
-generate_report:
-
-Creates a Markdown report that includes the summary, missing values, distributions, correlations, and categorical feature analysis.
-Writes the report to data/eda_results/report.md.
-run_all_eda:
-
-Executes the EDA functions in sequence:
-Calls run_summary for statistical analysis.
-Calls run_missing_values_analysis to assess data completeness.
-Calls run_distribution_visualization to create distribution plots.
-Calls run_correlation_analysis for correlation matrix visualizations.
-Calls run_categorical_analysis for categorical data insights.
-Logging Information
-The script utilizes Python's logging module to log the execution steps, making it easier to debug and track the process.
-
-2. Individual Modules
-data_summary.py:
-Contains functions to calculate summary statistics of the dataset, such as mean, median, and standard deviation.
-missing_values_analysis.py:
-Analyzes the dataset for missing values and returns a structured summary.
-distribution_visualization.py:
-Generates visualizations (e.g., histograms, density plots) for each numerical feature to understand their distributions.
-correlation_analysis.py:
-Computes the correlation matrix and visualizes it using heatmaps to reveal relationships between numerical variables.
-categorical_analysis.py:
-Analyzes categorical features and produces count plots to visualize their distribution.
-Contribution
-Contributions to the EDA Pipeline are welcome! If you have suggestions or improvements, please create a pull request or open an issue.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgements
-Inspired by various data analysis frameworks and the Python data science community.
-Thanks to the libraries used: Pandas, NumPy, Matplotlib, and Seaborn for their invaluable contributions to data analysis and visualization.
-Conclusion
-This EDA pipeline provides a structured and automated approach to exploratory data analysis, making it easier to derive insights from datasets. By following the outlined steps, you can efficiently analyze your data and generate comprehensive reports.
-
-
-### Summary
-
-This `README.md` file includes:
-
-- A project overview with images and structured sections.
-- Detailed explanations of how to install, use, and understand the code.
-- Example outputs and clear directory structures.
-
-Feel free to customize the placeholders for images and any additional details specific to your project. This version should provide a professional presentation of your EDA project!
+## Categorical Features
